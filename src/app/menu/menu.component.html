@@ -1,0 +1,80 @@
+<div class="nav-holder">
+  <nav class="material-nav">
+    <div class="nav-brand">
+      <img class="desktop" src="assets/icons/brand.svg">
+      <img class="mobile" src="assets/icons/mbrand.svg">
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li>
+
+          <button id="login" *ngIf="!isLoggedIn" (click)="login()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent google">
+            Google Sign In
+          </button>
+          <button id="logout" *ngIf="isLoggedIn" (click)="logout()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent google">
+            LOGOUT
+          </button>
+          <span *ngIf="isLoggedIn">Hello {{isLoggedIn.auth.displayName}}</span>
+
+        </li>
+        <li>
+          <button (click)="chatDrawer = true" id="chat-drawer" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored white def">
+            <i class="material-icons">chat</i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div id="drawer" class="chat-holder" [ngClass]="{active:chatDrawer}">
+        <button (click)="chatDrawer = false" id="chat-drawer-close" type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored white def">
+        <i class="material-icons">close</i>
+      </button>
+
+      <div id="messages-card">
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+          <div id="messages">
+
+            <div *ngFor="let item of items | async" [class.client-message]="item.user == isLoggedIn.auth.displayName" [class.recipient-message]="item.user != isLoggedIn.auth.displayName">
+              <div class="bubble-holder">
+                <div class="message-bubble">
+                  <span class="mssg">{{item.message}}</span>
+                </div>
+              </div>
+              <div class="msg-name">
+                <p>{{item.user}}</p>
+              </div>
+            </div>
+            <!-- <div class="client-message">
+              <div class="message-bubble">
+                <span class="mssg">Hello World</span>
+              </div>
+            </div> -->
+          </div>
+          <form id="message-form" action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="message" [(ngModel)]="formMessage" [ngModelOptions]="{standalone: true}" required>
+              <label class="mdl-textfield__label" for="message">Message...</label>
+            </div>
+            <button id="submit" (click)="submitMessage()" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+</div>
+
+<!--
+<div class="message-container">
+  <div class="spacing">
+    <div class="pic"></div>
+  </div>
+  <div class="message">Hello</div>
+  <div class="name">World</div>
+</div> -->

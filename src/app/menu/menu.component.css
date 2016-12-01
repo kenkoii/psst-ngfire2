@@ -1,0 +1,52 @@
+#messages{
+  height: 80%;
+  margin-top: 35px;
+  overflow-y: auto;
+}
+
+#message-form{
+  width: 100%;
+}
+
+.recipient-message, .client-message{
+  width: 100%;
+  padding: 25px 0;
+}
+
+.recipient-message .message-bubble{
+  float: left;
+  background: #ccc;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.recipient-message .bubble-holder,
+.client-message .bubble-holder{
+  clear: both;
+  width: 100%;
+}
+
+.recipient-message .message-bubble .mssg,
+.client-message .message-bubble .mssg{
+  color: #fff;
+}
+
+.recipient-message .message-bubble p{
+  float: left;
+  width: 100%;
+}
+.client-message .message-bubble p{
+  float:right;
+  width: 100%;
+}
+
+.client-message .message-bubble{
+  float: right;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #ca094b;
+}
+
+.recipient-message .msg-name{
+  width: 100%;
+}

@@ -1,0 +1,259 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 400;
+	margin: 0;
+}
+
+.mdl-dialog > .mdl-card__title{
+	color: #fff;
+  height: 176px;
+  background: url('../assets/images/flat mountain.jpg') center / cover;
+}
+
+.signin-holder{
+	display: none;
+	position: fixed;
+	top: 65px;
+	right: 150px;
+	width: 220px;
+	border-radius: 2px;
+	z-index: 9999;
+}
+
+.signin-holder.active{
+	display: block;
+}
+
+.signin-holder .signin-card{
+	padding: 40px 30px;
+	background: #fff;
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.08);
+}
+
+#map{
+	width: 100%;
+	height: 90%;
+}
+
+.material-icons{
+	font-size: 18px;
+}
+
+p{
+	line-height: 18px;
+}
+
+a{
+	text-decoration: none;
+	color: #363635;
+}
+
+.btn{
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.circle{
+	padding: 20px
+	border-radius: 100% !important;
+}
+
+.blue{
+	background: #38A4DD !important;
+}
+
+.pink{
+	background: #E81F64 !important;
+	color: #fff;
+}
+
+.green{
+	background: #8BC249 !important;
+}
+
+.purple{
+	background: #543E98 !important;
+}
+
+.google{
+	font-weight: 300;
+	background: #dd4b39 !important;
+	color: #fff !important;
+}
+
+.white{
+	background: #fff !important;
+	color: #363635 !important;
+}
+
+.btn.white i{
+	font-size: 18px;
+}
+
+.btn:hover{
+	background: rgba(0,0,0,0.08);
+}
+
+.btn.active{
+	background: rgba(0,0,0,0.08);
+}
+
+.nav-holder{
+	width: 100%;
+	padding: 10px 0px;
+	background: #fff;
+	color: #363635 !important;
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.08);
+	z-index: 9999;
+}
+
+.material-nav{
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.material-nav div{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.material-nav .nav-brand{
+	padding: 5px;
+}
+
+.material-nav .nav-brand img{
+	width: 90px;
+	height: auto;
+}
+
+.desktop{
+	display: block;
+}
+.mobile{
+	display: none;
+}
+
+.material-nav .nav-search{
+	margin: 0 auto;
+}
+
+.material-nav .nav-search .search-bar{
+	width: 300px;
+	margin: 0 20%;
+	background: rgba(0,0,0,0.07);
+	border-radius: 2px;
+	padding: 5px;
+}
+
+.material-nav .nav-search .search-bar div{
+	vertical-align: middle;
+}
+
+.material-nav .nav-search .search-bar .search-icon i{
+	padding: 5px 10px;
+}
+
+.material-nav .nav-search .search-bar .search-input input{
+	padding: 5px;
+	width: 200px;
+	background: none;
+	border: 0;
+	outline: none;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.material-nav .nav-links{
+	float: right;
+}
+
+.material-nav .nav-links ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.material-nav .nav-links ul li{
+	display: inline-block;
+	padding: 0px 10px;
+}
+
+.material-nva .nav-links ul li a{
+	display: block;
+	padding: 20px;
+}
+
+.filter-holder{
+	width: 100%;
+	height: 40px;
+	padding: 20px 0px;
+	position: fixed;
+	bottom: 30px;
+	z-index: 9999;
+}
+
+.filter-card{
+	width: 50px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.hide{
+	display: none !important;
+}
+
+
+.chat-holder{
+	background: #fff;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: -300%;
+	padding: 0px 20px;
+	z-index: 99999;
+	border-left: 2px solid rgba(0,0,0,0.1);
+	transition: all 0.3s ease-in-out;
+}
+
+.chat-holder.active{
+	right: 0;
+}
+
+#messages-card{
+	height: 90% !important;
+}
+
+#chat-drawer-close{
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+dialog{
+	top: 0px !important;
+}
+
+.marker-dialog{
+	width: 420px;
+	position: fixed;
+	top: 50%;
+	left: 20%;
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	z-index: 9999;
+}
+
+.marker-dialog .marker-title{
+	padding: 30px;
+}
+
+.marker-dialog .marker-message{
+	padding: 10px 30px;
+	font-weight: 300;
+	background: #fff;
+	color: rgba(0,0,0,0.3);
+}

@@ -1,0 +1,54 @@
+<sebm-google-map [latitude]="10.3157" [longitude]="123.8854" [zoom]="15" (mapClick)="mapClicked($event)">
+  <sebm-google-map-marker *ngFor="let item of items | async" [latitude]="item.lat" [longitude]="item.lng" [visible]="true" [iconUrl]="getIcon(item.type)">
+    <sebm-google-map-info-window>
+      <h3>{{item.title}}</h3>
+      <hr>
+      {{item.description}}
+    </sebm-google-map-info-window>
+
+  </sebm-google-map-marker>
+</sebm-google-map>
+
+
+<dialog class="mdl-dialog"  id="new-pin" [open]="isOpen">
+  <h4 class="mdl-dialog__title">
+    <img src="assets/icons/pin.svg">
+  </h4>
+  <div class="mdl-dialog__content">
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="pinTitle" [(ngModel)]="marker.title" [ngModelOptions]="{standalone: true}" required>
+        <label class="mdl-textfield__label" for="pinTitle">Pin Title</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield">
+  <textarea class="mdl-textfield__input" type="text" rows= "5" id="pinMessage" [(ngModel)]="marker.description" [ngModelOptions]="{standalone: true}" required> </textarea>
+  <label class="mdl-textfield__label" for="pinMessage" required>Message</label>
+  </div>
+      <ul class="demo-list-item mdl-list">
+
+        <li>
+              <input #event type="radio" id="option-1" class="mdl-radio__button" name="newOptions" value="happening" [checked]="marker.type == event.value" (click)="marker.type = event.value">
+              <span class="mdl-radio__label">Happening</span>
+        </li>
+        <li>
+              <input #event type="radio" id="option-2" class="mdl-radio__button" name="newOptions" value="event" [checked]="marker.type == event.value" (click)="marker.type = event.value">
+              <span class="mdl-radio__label">Event</span>
+        </li>
+
+        <li>
+              <input #event type="radio" id="option-3" class="mdl-radio__button" name="newOptions" value="emergency" [checked]="marker.type == event.value" (click)="marker.type = event.value">
+              <span class="mdl-radio__label">Emergency</span>
+        </li>
+        <li>
+              <input #event type="radio" id="option-4" class="mdl-radio__button" name="newOptions" value="complaint" [checked]="marker.type == event.value" (click)="marker.type = event.value">
+              <span class="mdl-radio__label">Complaint</span>
+        </li>
+      </ul>
+
+    </form>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button type="button" class="mdl-button" id="submitPin" (click)="submitData()">Pin</button>
+    <button type="button" class="mdl-button close" (click)="openModal()">Cancel</button>
+  </div>
+</dialog>
